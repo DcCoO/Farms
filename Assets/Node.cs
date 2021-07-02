@@ -106,7 +106,7 @@ public class Node : MonoBehaviour
     {
         if (!node.isFarm) node.farmReference = farmRef;
         for (int i = 0, len = node.adjList.Count; i < len; ++i)
-            if (!ReferenceEquals(node.adjList[i].farmReference, farmRef))
+            if (ReferenceEquals(node.adjList[i].farmReference, null))
                 PropagateFarm(node.adjList[i], node.isFarm ? node : farmRef);
     }
 
